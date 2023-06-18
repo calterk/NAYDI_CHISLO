@@ -1,0 +1,203 @@
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #50b7e9;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  width: 150px;
+  height: 70px;
+  border-radius: 35px;
+  background-color: #94c956;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  border: 0px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.5);
+}
+
+#gameContainer {
+  display: none;
+  margin-top: 50px;
+  width: 485px;
+  height: 380px;
+}
+
+#scoreTimeWrapper {
+  position: relative;
+}
+
+#scoreTimeOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#scoreTimeWrapper #score,
+#scoreTimeWrapper #timer {
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+}
+
+#targetNumber::before,
+#score::before {
+  content: ' ';
+  margin-right: 5px;
+}
+
+#targetNumber {
+  font-size: 30px;
+  border: 0px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.cell {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.cell:hover {
+  box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.5);
+}
+
+.number {
+  transform-origin: center;
+}
+
+.target {
+  background-color: yellow;
+}
+
+.pulsating {
+  animation: pulsate 1s infinite alternate;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.blinking {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.tilting {
+  animation: tilt 1s infinite;
+}
+
+#resultContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  width: 485px;
+  height: 380px;
+  text-align: center;
+}
+
+#resultText {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#restartButton {
+  width: 200px;
+  height: 70px;
+  border-radius: 35px;
+  background-color: #f18e42;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  border: none;
+  margin-top: 20px; /* Добавлено для отступа сверху */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#restartButton:hover {
+  box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.5);
+}

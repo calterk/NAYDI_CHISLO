@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Найди Число</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    body {
+      width: 485px;
+      height: 380px;
+      margin: 0 auto;
+      background-color: #50b7e9;
+    }
+  </style>
+</head>
+<body>
+  <button id="startButton" class="button">СТАРТ</button>
+  <div id="gameContainer">
+    <div id="scoreTimeWrapper">
+      <div id="score">Счет: 0</div>
+      <div id="scoreTimeOverlay"></div>
+    </div>
+    <div id="targetNumber">Найдите число: </div>
+    <div class="grid">
+      <div class="cell">
+        <div class="number"></div>
+      </div>
+      <!-- остальные клетки таблицы чисел -->
+    </div>
+  </div>
+
+  <div id="resultContainer" style="display: none;">
+    <div id="resultText"></div>
+    <button id="restartButton" class="button">Перезапустить</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
